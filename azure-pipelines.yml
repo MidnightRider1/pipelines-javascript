@@ -27,5 +27,5 @@ steps:
 - script: |
     npm install --only=dev
     npm run build
-- script: npm install -g @angular/cli
+    npm install -g @angular/cli
   displayName: 'npm install and build'
