@@ -20,8 +20,13 @@ steps:
   inputs:
     versionSpec: $(node_version)
   displayName: 'Install Node.js'
+- task: Npm@1
+  inputs:
+     command: 'install'
 
 - script: |
-    npm install
+    npm install --only=dev
     npm run build
+- script: npx mocha
+- script: npm install -g @angular/cli
   displayName: 'npm install and build'
